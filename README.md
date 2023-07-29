@@ -1,40 +1,5 @@
 # Chess Coding Challenge (C#)
-Welcome to the [chess coding challenge](https://youtu.be/iScy18pVR58)! This is a friendly competition in which your goal is to create a small chess bot (in C#) using the framework provided in this repository.
-Once submissions close, these bots will battle it out to discover which bot is best!
-
-I will then create a video exploring the implementations of the best and most unique/interesting bots.
-I also plan to make a small game that features these most interesting/challenging entries, so that everyone can try playing against them.
-
-## Change Log
-I unfortunately missed a serious bug in the API and have had to update the project. Please keep an eye on the change log here in case I've made any other horrifying mistakes. Some additions and improvements may also be made to the API in the first few weeks of the challenge, but breaking changes will be strictly avoided. The version you are currently using will be printed to the console when running the program (unless you are using v1.0, in which case nothing will be printed).
-* <b>V1.1</b> Fixed major bug affecting `board.GetPiece()` and `PieceList` functions. Added `Board.CreateBoardFromFEN()`.
-* <b>V1.11</b> UI changes: Added coordinate names to board UI and fixed human player input bug.
-* <b>V1.12</b> Small fixes to `board.IsDraw()`: Fifty move counter is now updated properly during search, and insufficient material is now detected for lone bishops on the same square colour.
-* <b>V1.13</b> Fixed issue with `board.ZobristKey` where value would sometimes be different after making and undoing a move. Added an alternative function for getting moves `board.GetLegalMovesNonAlloc()` (see docs for more info).
-* <b>V1.14</b> A handful of additions to the Board API: `board.IsInsufficientMaterial()`, `board.IsRepeatedPosition()`, `board.GameRepetitionHistory`, `board.FiftyMoveCounter`, `board.GameMoveHistory`, `board.GameStartFenString`.
-* <b>V1.15</b> Fixed incorrect `move.CapturePieceType` for en-passant moves and moves in `board.GameMoveHistory`. Added `BitboardHelper.VisualizeBitboard()` to help with debugging bitboards.
-* <b>V1.16</b> Added `timer.GameStartTimeMilliseconds`, `timer.OpponentMillisecondsRemaining`, and `board.ForceSkipTurn()`.
-
-## Submission Due Date
-October 1st 2023.<br>
-You can submit your entry [here](https://forms.gle/6jjj8jxNQ5Ln53ie6).
-
-## How to Participate
-* Install an IDE such as [Visual Studio](https://visualstudio.microsoft.com/downloads/).
-* Install [.NET 6.0](https://dotnet.microsoft.com/en-us/download)
-* Download this repository and open the Chess-Challenge project in your IDE.
-* Try building and running the project.
-  * If a window with a chess board appears — great!
-  * If it doesn't work, take a look at the [FAQ/troubleshooting](#faq-and-troubleshooting) section at the bottom of the page. You can also search the [issues page](https://github.com/SebLague/Chess-Challenge/issues) to see if anyone is having a similar issue. If not, post about it there with any details such as error messages, operating system etc.
-* Open the MyBot.cs file _(located in src/MyBot)_ and write some code!
-  * You might want to take a look at the [Documentation](https://seblague.github.io/chess-coding-challenge/documentation/) first, and the Rules too!
-* Build and run the program again to test your changes.
-  * For testing, you have three options in the program:
-    * You can play against the bot yourself (Human vs Bot)
-    * The bot can play a match against itself (MyBot vs MyBot)
-    * The bot can play a match against a simple example bot (MyBot vs EvilBot).<br>You could also replace the EvilBot code with your own code, to test two different versions of your bot against one another.
-* Once you're happy with your chess bot, head over to the [Submission Page](https://forms.gle/6jjj8jxNQ5Ln53ie6) to enter it into the competition.
-  * You will be able to edit your entry up until the competition closes.
+This is my entry for [Sebastian Lague's chess coding challenge](https://youtu.be/iScy18pVR58), a friendly competition in which your goal is to create a small chess bot (in C#) using the framework provided in this repository.
 
 ## Rules
 * You may participate alone, or in a group of any size.
@@ -65,21 +30,5 @@ There is a size limit on the code you create called the _bot brain capacity_. Th
 
 All names (variables, functions, etc.) are counted as a single token, regardless of length. This means that both lines of code: `bool a = true;` and `bool myObscenelyLongVariableName = true;` count the same. Additionally, the following things do not count towards the limit: white space, new lines, comments, access modifiers, commas, and semicolons.
 
-## FAQ and Troubleshooting
-* Will the final tournament games be played from the standard starting position, or from custom positions?
-  * Games will be played from the standard starting position. If tiebreak games are required, custom positions will be used.
-* [Unable to build/run the project from my IDE/Code editor](https://github.com/SebLague/Chess-Challenge/issues/85)
-  * After downloading the project and installing .Net 6.0, open a terminal / command prompt window.
-  * Navigate to the folder where Chess-Challenge.csproj is located using the `cd` command.
-    * For example: `cd C:\Users\MyName\Desktop\Chess-Challenge\Chess-Challenge`
-  * Now use the command: `dotnet run`
-  * This should launch the project. If not, open an issue with any error messages and relevant info.
-*  [Running on Linux](https://github.com/SebLague/Chess-Challenge/discussions/3)
-* Issues with illegal moves or errors when making/undoing a move
-  * Make sure that you are making and undoing moves in the correct order, and that you don't forget to undo a move when exiting early from a function for example.
-* How to tell what colour MyBot is playing
-  * You can look at `board.IsWhiteToMove` when the Think function is called
-* `GetPiece()` function is giving a null piece after making a move
-  * Please make sure you are using the latest version of the project, there was a bug with this function in the original version
-* There is a community-run discord server [over here](https://github.com/SebLague/Chess-Challenge/discussions/156).
-  
+## More information
+See [Sebastian's original repo](https://github.com/SebLague/Chess-Challenge).
